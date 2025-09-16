@@ -65,7 +65,7 @@
   }
 
   /* Dark mode support (if parent has .dark class) */
-  .dark & {
+  :host-context(.dark){
     .left, .right {
       h2, h3 {
         color: #fff;
@@ -75,4 +75,5 @@
       .cards app-employee-card { background:#333; color:#fff; box-shadow: none; }
     }
   }
+
 }

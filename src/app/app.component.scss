@@ -25,26 +25,53 @@
   color: #fff;
 
   &-actions {
-    .theme-toggle {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      height: 28px;
-      padding: 0 10px 0 36px;
-      border: 1px solid #fff;
-      background: transparent;
-      color: #fff;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: background-color .3s ease, color .3s ease, border-color .3s ease;
-    }
-    .theme-toggle .knob {
-      position: absolute; left: 4px; top: 3px; width: 22px; height: 22px; border-radius: 50%; background:#fff;
-      transition: transform .25s ease;
-    }
-    .theme-toggle.active .knob { transform: translateX(28px); }
-    .theme-toggle .label { font-weight: 600; }
+ .theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 28px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+
+  .knob {
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform .25s ease;
+    z-index: 1;
+  }
+
+  .label {
+    position: absolute;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  &.active .knob {
+    transform: translateX(48px);
+  }
+
+  /* Label slides depending on state */
+  &:not(.active) .label {
+    transform: translateX(20px);
+  }
+  &.active .label {
+    transform: translateX(-20px);
+  }
+}
+
   }
 }
 

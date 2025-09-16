@@ -6,17 +6,8 @@ import { ChartOptions, ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-chart',
-  template: `
-    <div class="chart-wrapper">
-      <canvas baseChart
-        [data]="chartData"
-        [labels]="labels"
-        [options]="options"
-        [type]="type">
-      </canvas>
-    </div>
-  `,
-  styles: [`.chart-wrapper { max-width:520px; height:280px; } canvas { max-height:260px !important; }`],
+  templateUrl: `chart.component.html`,
+  styleUrls: [`chart.component.scss`],
   standalone: true,
   imports: [CommonModule, BaseChartDirective]
 })

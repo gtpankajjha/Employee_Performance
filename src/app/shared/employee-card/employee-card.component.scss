@@ -9,12 +9,15 @@
 
 .card:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,.12); }
 
-.card-head { display:flex; flex-direction:column; gap:.2rem; margin-bottom:.4rem; }
+.card-head { display:flex; flex-direction:column; gap:.2rem; margin-bottom:.4rem;}
 .card-head h3 { margin:0; font-size:1.1rem; color:#007bff; }
 .card-head small { font-size:.85rem; color:#666; }
 
 .meta { margin:0; font-size:.95rem; color:#333; }
 
-.dark .card { background:#333; color:#fff; }
-.dark .card-head h3 { color:#fff; }
-.dark .meta, .dark .card-head small { color:#fff; }
+:host-context(.dark){
+ .card-head { background:#333; color:#fff; }
+ .card-head h3 { color:#fff; }
+ .meta,.card-head small { color:#fff; }
+}
+

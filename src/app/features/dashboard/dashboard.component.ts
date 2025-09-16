@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   employees$!: Observable<Employee[]>;
   avgData: number[] = [];
   sub?: Subscription;
+  
 
   constructor(private empService: EmployeeService) {}
 
