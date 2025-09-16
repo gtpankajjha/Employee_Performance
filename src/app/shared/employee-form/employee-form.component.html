@@ -1,0 +1,41 @@
+ <form [formGroup]="form" (ngSubmit)="onSubmit()" class="compact-form">
+      <div class="field">
+        <label for="name">Name</label>
+        <div class="input-row">
+          <div class="input-wrap" [class.invalid]="name.invalid && (name.dirty || name.touched)">
+            <input id="name" formControlName="name" />
+            <div class="tooltip" *ngIf="name.invalid && (name.dirty || name.touched)">
+              <ng-container *ngIf="name.errors?.['required']; else nameMin">Name is required</ng-container>
+              <ng-template #nameMin>Min 2 characters</ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="role">Role</label>
+        <div class="input-row">
+          <div class="input-wrap" [class.invalid]="role.invalid && (role.dirty || role.touched)">
+            <input id="role" formControlName="role" />
+            <div class="tooltip" *ngIf="role.invalid && (role.dirty || role.touched)">Role is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="performance">Performance</label>
+        <div class="input-row">
+          <div class="input-wrap" [class.invalid]="performance.invalid && (performance.dirty || performance.touched)">
+            <input id="performance" formControlName="performance" placeholder="e.g., 80,85,90" />
+            <div class="tooltip" *ngIf="performance.invalid && (performance.dirty || performance.touched)">
+              <ng-container *ngIf="performance.errors?.['required']; else perfPattern">Performance is required</ng-container>
+              <ng-template #perfPattern>Enter comma separated numbers</ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" [disabled]="form.invalid">Add Employee</button>
+      </div>
+    </form>

@@ -1,0 +1,17 @@
+<div class="app" [class.dark]="dark">
+      <header class="header">
+        <h3>Employee Performance</h3>
+        <div class="header-actions">
+          <button class="theme-toggle" [class.active]="dark" (click)="toggleDark()" aria-label="Toggle theme">
+            <span class="knob"></span>
+            <span class="label">{{ dark ? 'Light' : 'Dark' }} Mode</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="main">
+        <router-outlet></router-outlet>
+      </main>
+
+      <footer class="footer">Assignment - Frontend Developer</footer>
+    </div>

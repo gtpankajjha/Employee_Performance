@@ -1,0 +1,16 @@
+<div class="dashboard-grid">
+      <div class="left">
+        <app-employee-form (create)="add($event)"></app-employee-form>
+
+        <span>Overview Chart (average performance per quarter)</span>
+        <app-chart [data]="avgData"></app-chart>
+      </div>
+
+      <div class="right">
+        <span>Employees</span>
+        <div class="cards" *ngIf="employees$ | async as emps; else loading">
+          <app-employee-card *ngFor="let e of emps" [employee]="e"></app-employee-card>
+        </div>
+        <ng-template #loading>Loading employees...</ng-template>
+      </div>
+    </div>

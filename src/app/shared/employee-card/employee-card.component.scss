@@ -1,0 +1,20 @@
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 0.25rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,.12); }
+
+.card-head { display:flex; flex-direction:column; gap:.2rem; margin-bottom:.4rem; }
+.card-head h3 { margin:0; font-size:1.1rem; color:#007bff; }
+.card-head small { font-size:.85rem; color:#666; }
+
+.meta { margin:0; font-size:.95rem; color:#333; }
+
+.dark .card { background:#333; color:#fff; }
+.dark .card-head h3 { color:#fff; }
+.dark .meta, .dark .card-head small { color:#fff; }
