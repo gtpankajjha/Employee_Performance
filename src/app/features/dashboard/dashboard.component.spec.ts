@@ -1,14 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
+import { Chart, BarController, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
-describe('Dashboard', () => {
+describe('DashboardComponent', () => {
+  beforeAll(() => {
+    Chart.register(BarController, BarElement, CategoryScale, LinearScale);
+  });
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DashboardComponent]
+     imports: [DashboardComponent]
     })
     .compileComponents();
 

@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   dark = false;
+  title = 'Hello, employee-performance';
 
   toggleDark() {
     this.dark = !this.dark;

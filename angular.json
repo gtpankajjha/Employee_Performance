@@ -28,7 +28,8 @@
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "polyfills": ["src/polyfills.ts"]
           },
           "configurations": {
             "production": {
@@ -82,7 +83,9 @@
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "polyfills": ["src/polyfills.ts"],
+            "karmaConfig": "karma.conf.js"
           }
         }
       }
